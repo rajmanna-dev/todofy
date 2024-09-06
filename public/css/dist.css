@@ -575,6 +575,11 @@ video {
   margin-right: auto;
 }
 
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -617,6 +622,10 @@ video {
 
 .mr-3 {
   margin-right: 0.75rem;
+}
+
+.mr-8 {
+  margin-right: 2rem;
 }
 
 .box-border {
