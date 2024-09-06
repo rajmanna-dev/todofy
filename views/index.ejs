@@ -29,18 +29,18 @@
       <form
         action="/api/todos"
         method="post"
-        class="input-form flex h-[48px] w-[736px] absolute -bottom-[24px]"
+        class="input-form flex h-[48px] w-[736px] absolute -bottom-[24px] max-sm:w-[340px] max-md:w-[600px]"
       >
         <input
           type="text"
           name="todoText"
-          class="todo-input w-[85%] border-none h-full outline-none px-4 text[#808080] text-2xl rounded-lg bg-[#262626]"
+          class="todo-input w-[85%] border-none h-full outline-none px-4 text[#808080] text-2xl rounded-lg bg-[#262626] max-sm:w-[80%]"
           placeholder="Add a task"
           required
         />
         <button
           type="submit"
-          class="btn-submit w-[15%] border-none flex text-[#e8e8e8] ml-[6px] rounded-lg text-[1.65rem] font-bold items-center justify-center bg-[#1e6f9f] hover:bg-[#0a87cf]"
+          class="btn-submit w-[15%] border-none flex text-[#e8e8e8] ml-[6px] rounded-lg text-[1.65rem] font-bold items-center justify-center bg-[#1e6f9f] hover:bg-[#0a87cf] max-sm:w-[20%]"
           id="todoSubmit"
         >
           Add
@@ -54,7 +54,7 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="lucide lucide-circle-plus ml-[4.5px] w-[20px]"
+            class="lucide lucide-circle-plus ml-[4.5px] w-[20px] max-sm:hidden"
           >
             <circle cx="12" cy="12" r="10" />
             <path d="M8 12h8" />
@@ -63,7 +63,7 @@
         </button>
       </form>
     </header>
-    <main class="m-auto w-[736px]">
+    <main class="mx-auto pb-10 w-[736px] max-sm:w-[340px] max-md:w-[600px]">
       <% if (locals.todos) { %>
       <section class="status-section mt-[7rem] mb-[2.6rem]">
         <div class="status flex justify-between">
@@ -140,7 +140,7 @@
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="lucide lucide-circle"
+              class="lucide lucide-circle mr-3"
             >
               <circle cx="12" cy="12" r="10" />
             </svg>
