@@ -87,5 +87,5 @@ app.delete('/all', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running on por ${port}`);
+  console.log(`Server running on port ${port}`);
 });
