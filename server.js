@@ -47,7 +47,18 @@ app.post('/api/todos', async (req, res) => {
 app.post('/api/todos/:id', async (req, res) => {
   try {
     const result = await axios.patch(`${API}/todos/${req.params.id}`, req.body);
-    console.log(result);
+    console.log(result.data);
+    res.redirect('/');
+  } catch (error) {
+    res.status(500).json({ message: 'Error updating todo' });
+  }
+});
+
+// Update a todo status
+app.get('/api/todos/status/:id', async (req, res) => {
+  try {
+    const result = await axios.get(`${API}/todos/status/${req.params.id}`);
+    console.log(result.data);
     res.redirect('/');
   } catch (error) {
     res.status(500).json({ message: 'Error updating todo' });

@@ -10,6 +10,7 @@ let todos = [
     id: 1,
     todoText: 'Buy a milk',
     todoCreatedAt: new Date(),
+    todoStatus: false,
   },
 ];
 let lastId = todos.length; // Get the length of todo list
@@ -37,6 +38,7 @@ app.post('/todos', (req, res) => {
     id: newId,
     todoText: req.body.todoText,
     todoCreatedAt: new Date(),
+    todoStatus: false,
   };
   lastId = newId;
   todos.push(newTodo);
@@ -47,9 +49,20 @@ app.post('/todos', (req, res) => {
 app.patch('/todos/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const todo = todos.find(todo => todo.id === id);
+  
   if (!todo) res.status(404).json({ message: 'Todo not found' });
-
   if (req.body.todoText) todo.todoText = req.body.todoText;
+
+  res.json(todo);
+});
+
+// Update todo status
+app.get('/todos/status/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const todo = todos.find(todo => todo.id === id);
+  
+  if (!todo) res.status(404).json({ message: 'Todo not found' });
+  todo.todoStatus = true;
 
   res.json(todo);
 });
