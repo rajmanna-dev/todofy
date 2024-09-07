@@ -861,6 +861,10 @@ video {
   outline-offset: 2px;
 }
 
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .hover\:bg-\[\#0a87cf\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(10 135 207 / var(--tw-bg-opacity));

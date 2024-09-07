@@ -53,9 +53,10 @@
             class="todo-count flex text-[#4ea8de] text-[1.42rem] font-bold justify-center"
           >
             <p class="title">Completed tasks</p>
+            <% const completeTaskCount = todos.filter(todo => todo.todoStatus === true); %>
             <span
               class="circle text-[#d9d9d9] px-[11px] ml-2 rounded-lg bg-[#333333]"
-              >0</span
+              ><%= completeTaskCount.length %></span
             >
           </div>
         </div>
