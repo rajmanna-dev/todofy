@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html class="scroll-smooth text-[62.5%] box-border">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="css/dist.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="h-[100vh] bg-[#1a1a1a] font-[Poppins]">
-    <header class="h-[200px] flex relative justify-center bg-[#0d0d0d]">
-      <div class="logo flex justify-center items-center">
-        <img
-          src="images/logo.png"
-          alt="todofy logo"
-          class="logo-image w-[30px]"
-        />
-        <h2
-          class="logo-title text-[#5e60ce] font-extrabold text-5xl"
-          translate="no"
-        >
-          <span class="purple-color text-[#4ea8de]">to</span>do
-        </h2>
-      </div>
+<%- include('partials/header.ejs') %>
       <form
         action="/api/todos"
         method="post"
@@ -149,7 +122,7 @@
             <%= todo.todoText %>
           </p>
           <a
-            href="/api/todos/<%= todo.id %>"
+            href="/edit/<%= todo.id %>"
             class="btn-update border-none text-[#808080] bg-transparent mr-8"
           >
             <svg

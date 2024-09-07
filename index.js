@@ -22,6 +22,14 @@ app.get('/todos', (req, res) => {
   res.json(todos);
 });
 
+// Get a specific todo
+app.get('/todos/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const todo = todos.find(todo => todo.id === id);
+  if (!todo) return res.statusCode(404).json({ message: 'Todo not found' });
+  res.json(todo);
+});
+
 // Post a new todo
 app.post('/todos', (req, res) => {
   const newId = (lastId += 1);

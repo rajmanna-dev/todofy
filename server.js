@@ -19,6 +19,19 @@ app.get('/', async (req, res) => {
   }
 });
 
+// Get specific todo
+app.get('/edit/:id', async (req, res) => {
+  try {
+    const result = await axios.get(`${API}/todos/${req.params.id}`);
+    console.log(result.data);
+    res.render('modify.ejs', {
+      todo: result.data,
+    });
+  } catch (error) {
+    res.status(500).json({ message: 'Error updating todo' });
+  }
+});
+
 // Create new todo
 app.post('/api/todos', async (req, res) => {
   try {
@@ -30,11 +43,12 @@ app.post('/api/todos', async (req, res) => {
   }
 });
 
-// Update todo
-app.get('/api/todos/:id', async (req, res) => {
+// Update a todo
+app.post('/api/todos/:id', async (req, res) => {
   try {
     const result = await axios.patch(`${API}/todos/${req.params.id}`, req.body);
     console.log(result);
+    res.redirect('/');
   } catch (error) {
     res.status(500).json({ message: 'Error updating todo' });
   }

@@ -1,0 +1,27 @@
+<%- include('partials/header.ejs') %>
+        <% if (locals.todo) { %>
+        <form
+        action="/api/todos/<%= todo.id %>"
+        method="post"
+        class="input-form flex h-[48px] w-[736px] absolute -bottom-[24px] max-sm:w-[340px] max-md:w-[600px]"
+        >
+        <input
+            type="text"
+            name="todoText"
+            value="<%= todo.todoText %>"
+            class="todo-input w-[85%] border-none h-full outline-none px-4 text-[#e8e8e8] text-2xl rounded-lg bg-[#262626] max-sm:w-[80%]"
+            placeholder="Add a task"
+            required
+        />
+        <button
+            type="submit"
+            class="btn-submit w-[15%] border-none flex text-[#e8e8e8] ml-[6px] rounded-lg text-[1.65rem] font-bold items-center justify-center bg-[#1e6f9f] hover:bg-[#0a87cf] max-sm:w-[20%]"
+            id="todoSubmit"
+        >
+            Update
+        </button>
+        </form>
+        <% } %>
+    </header>
+</body>
+</html>
